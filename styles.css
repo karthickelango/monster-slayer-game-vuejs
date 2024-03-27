@@ -24,7 +24,7 @@ header {
 }
 section {
   width: 90%;
-  max-width: 40rem;
+  /* max-width: 40rem; */
   margin: auto;
 }
 
@@ -113,6 +113,9 @@ button:disabled {
   border-left: 1px solid #dee2e6;
   background-color: #f8f9fa;
 }
+.left-panel {
+  position: relative;
+}
 .start-over {
   display: flex;
   align-items: center;
@@ -121,4 +124,10 @@ button:disabled {
 }
 .b-0 {
   border: none !important;
+}
+.animated-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 200px);
 }
