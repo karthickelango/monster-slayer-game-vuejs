@@ -119,3 +119,6 @@ button:disabled {
   justify-content: center;
   height: calc(100vh - 150px);
 }
+.b-0 {
+  border: none !important;
+}

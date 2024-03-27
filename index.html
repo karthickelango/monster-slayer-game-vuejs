@@ -31,12 +31,14 @@
                 <div class="healthbar__value" :style="[monsterBarStyles, monsterBarColor50, monsterBarColor25]"></div>
               </div>
               <h2 class="title text-start">Monster Health</h2> 
+              <img src="monster.gif" class="img-thumbnail b-0">
             </section>
             <section id="player" class="col-6">
               <div class="healthbar">
                 <div class="healthbar__value" :style="[playerBarStyles, playerBarColor50, playerBarColor25]"></div>
               </div>
               <h2 class="title text-end">Your Health</h2>
+              <img src="human.gif" class="img-thumbnail b-0">
             </section>
           </div>
           <section class="start-over" v-if="winner">
