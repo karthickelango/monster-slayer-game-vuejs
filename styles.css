@@ -72,12 +72,14 @@ button.btn{
 button:focus {
   outline: none;
 }
-button:disabled {
+.animate_button_special:disabled {
   background-color: #ccc;
   border-color: #ccc;
   box-shadow: none;
-  color: #3f3f3f;
   cursor: not-allowed;
+}
+.animate_button_special:disabled:hover .button_special{
+  transform: translateY(-0.2em);
 }
 
 #log ul {
