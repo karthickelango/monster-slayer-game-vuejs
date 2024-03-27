@@ -57,40 +57,40 @@
               <h3 v-if="winner === 'monster'">You lost!</h3>
               <h3 v-else-if="winner === 'player'">You Won!</h3>
               <h3 v-else>It's a draw</h3>
-              <button @click="startGame" type="button" class="btn btn-success">
-                Start New Game
+              <button class="animate_button_heal mt-20" @click="startGame">
+                <span class="button_heal">Start New Game</span>
               </button>
             </div>
           </section>
           <section id="controls" v-else>
-            <button
-              @click="attackMonster"
-              type="button"
-              class="btn btn-warning"
-            >
-              Attack
+            <button class="animate_button_attack" @click="attackMonster">
+              <span class="button_attack"> Attack </span>
             </button>
             <button
-              :disabled="mayUseSpecialAttack"
+              class="animate_button_special"
               @click="specialAttackMonster"
-              type="button"
-              class="btn btn-danger"
+              :disabled="mayUseSpecialAttack"
             >
-              Special attack
+              <span class="button_special"> Special attack </span>
             </button>
-            <button @click="healPlayer" type="button" class="btn btn-success">
-              Heal
+            <button class="animate_button_heal" @click="healPlayer">
+              <span class="button_heal">Heal</span>
             </button>
-            <button @click="surrender" type="button" class="btn btn-info">
-              Surrender
+            <button class="animate_button_surrender" @click="surrender">
+              <span class="button_surrender"> Surrender </span>
             </button>
           </section>
         </div>
         <div class="col-4 right-panel">
           <section id="log">
-            <h2 class="text-start">Battle Log</h2>
+            <div class="card-panel" v-if="logMessages.length == 0">
+              <div class="card">
+                <h2>You will see the Battle Log's here</h2>
+              </div>
+            </div>
+            <h2 class="text-start" v-if="logMessages.length > 0">Battle Log</h2>
             <ul class="text-start">
-              <li v-for="logMessage in logMessages">
+              <li v-for="logMessage in logMessages" class="alert alert-info">
                 <span
                   :class="{'log--player': logMessage.actionBy === 'player', 'log--monster': logMessage.actionBy === 'monster'}"
                   >{{logMessage.actionBy === 'player' ? 'Player' : 'Monster'

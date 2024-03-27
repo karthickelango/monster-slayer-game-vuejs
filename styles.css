@@ -131,3 +131,171 @@ button:disabled {
   align-items: center;
   height: calc(100vh - 200px);
 }
+
+/* button attack*/
+.animate_button_attack {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #ffc107;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+}
+
+.button_attack {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: #000;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+/* button special*/
+.animate_button_special {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #dc3545;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+}
+
+.button_special {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: #000;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+/* button special*/
+.animate_button_heal {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #198754;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+}
+
+.button_heal {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: #000;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+/* button special*/
+.animate_button_surrender {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #0dcaf0;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+}
+
+.button_surrender {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: #000;
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.animate_button_attack:hover .button_attack,  .animate_button_special:hover .button_special, .animate_button_heal:hover .button_heal, .animate_button_surrender:hover .button_surrender{
+  /* Pull the button upwards when hovered */
+  transform: translateY(-0.33em);
+}
+
+.animate_button_attack:active .button_attack, .animate_button_special:active .button_special, .animate_button_heal:active .button_heal, .animate_button_surrender:active .button_surrender {
+  /* Push the button downwards when pressed */
+  transform: translateY(0);
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.card {
+  width: 300px;
+  height: 254px;
+  background: #07182E;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.card h2 {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+.card-panel {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 150px);
+}
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  background: #07182E;
+  ;
+  inset: 5px;
+  border-radius: 15px;
+}  
+/* .card:hover:before {
+  background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+  animation: rotBGimg 3.5s linear infinite;
+} */
+
