@@ -35,7 +35,7 @@
               </div>
               <h2 class="title text-start">Monster Health</h2>
               <div class="animated-img" v-if="!winner">
-                <img src="monster.gif" class="img-thumbnail b-0" />
+                <img src="monster.gif" class="img-thumbnail b-0" :style="[monsterColorChange]"/>
               </div>
             </section>
             <section id="player" class="col-6">
@@ -47,7 +47,7 @@
               </div>
               <h2 class="title text-end">Your Health</h2>
               <div class="animated-img" v-if="!winner">
-                <img src="human.gif" class="img-thumbnail b-0" />
+                <img src="human.gif" class="img-thumbnail b-0" :style="[personColorChange]"/>
               </div>
             </section>
           </div>

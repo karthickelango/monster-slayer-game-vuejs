@@ -12,6 +12,8 @@ const app = Vue.createApp({
       logMessages: [],
       playerProgressColor: "#198754",
       monsterProgressColor: "#198754",
+      playerColor: 0,
+      monsterColor: 0,
     };
   },
   computed: {
@@ -56,6 +58,16 @@ const app = Vue.createApp({
     mayUseSpecialAttack() {
       return this.currentRound % 3 !== 0;
     },
+    monsterColorChange() {
+      return {
+        filter: `grayscale(${this.monsterColor}%)`,
+      };
+    },
+    personColorChange() {
+      return {
+        filter: `grayscale(${this.playerColor}%)`,
+      };
+    },
   },
   watch: {
     playerHealth(value) {
@@ -86,23 +98,28 @@ const app = Vue.createApp({
         (this.logMessages = []);
       this.playerProgressColor = "#198754";
       this.monsterProgressColor = "#198754";
+      this.playerColor = 0,
+      this.monsterColor =0
     },
     attackMonster() {
       this.currentRound++;
       const attackValue = getRandomNumber(5, 12);
       this.monsterHealth -= attackValue;
+      this.monsterColor += attackValue
       this.addLogMessage("player", "attack", attackValue);
       this.attackPlayer();
     },
     attackPlayer() {
       const attackValue = getRandomNumber(8, 15);
       this.playerHealth -= attackValue;
+      this.playerColor += attackValue
       this.addLogMessage("monster", "attack", attackValue);
     },
     specialAttackMonster() {
       this.currentRound++;
       const attackValue = getRandomNumber(10, 25);
       this.monsterHealth -= attackValue;
+      this.monsterColor += attackValue
       this.addLogMessage("player", "attack", attackValue);
       this.attackPlayer();
     },
@@ -113,6 +130,7 @@ const app = Vue.createApp({
         return (this.playerHealth = 100);
       }
       this.playerHealth += healValue;
+      this.playerColor -= healValue
       this.addLogMessage("player", "heal", healValue);
       this.attackPlayer();
     },
